@@ -4,7 +4,7 @@ pop the stack and append the value to the result array and search for the right 
 """
 import unittest
 
-class Tree:
+class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val=val
         self.left=left
@@ -17,11 +17,12 @@ class TreeTraversal(unittest.TestCase):
         self.res=[]
 
     def inorder_traversal(self):
-        current=self.root
-        if current:
-            self.stack.append(current.val)
-            current=self.root.left
-        else:
+        current=self.root 
+        while current or self.stack:       
+            while current :
+                self.stack.append(current)
+                current=current.left
+            
             current=self.stack.pop()
             self.res.append(current.val)
             current=current.right

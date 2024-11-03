@@ -8,12 +8,15 @@ from path_finder import PathFinder
 class TestPathFinder(unittest.TestCase):
     def test_valid_matrix(self):
         matrix=[[1,1,0,0],[1,1,1,1],[0,0,1,1]]
-        self.assertEqual(PathFinder.matrix_validity(matrix), True)
+        path_finder = PathFinder(matrix)
+        self.assertEqual(path_finder.matrix_validity(), True)
 
     def test_invalid_start_matrix(self):
         matrix=[[0,1,0,0],[1,1,1,1],[0,0,1,1]]
-        self.assertEqual(PathFinder.matrix_validity(matrix), False)
+        path_finder = PathFinder(matrix)
+        self.assertEqual(path_finder.matrix_validity(), False)
 
     def test_invalid_end_matrix(self):
         matrix=[[1,1,0,0],[1,1,1,1],[0,0,1,0]]
-        self.assertEqual(PathFinder.matrix_validity(matrix), False)
+        path_finder = PathFinder(matrix)
+        self.assertEqual(path_finder.matrix_validity(), False)

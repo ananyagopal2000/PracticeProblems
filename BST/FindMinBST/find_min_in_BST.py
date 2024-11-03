@@ -1,3 +1,9 @@
+"""
+In a BST, since all the smaller elements are always on the left side of the tree, we can assume that the smallest element would
+be the leftmost leaf node present in the tree. So upon recursively calling for the left subtree we return the leftmost node 
+with no left cheild present
+"""
+
 import unittest
 
 class TreeNode:

@@ -1,3 +1,9 @@
+"""
+Firstly, we need to check the matrix validity: 1. if the matrix is empty, or the first element in the matrix=0 or the (m-1 and n-1)th
+element in the matrix is a 0, return false-cannot find path. 
+Once the initial checks are satisfied, we can start from the first element and do dfs by simultaneously calling both the vertical
+and horizontal elements until one of them reach the element at matrix[m-1][n-1], if this element is a 1 return True!
+"""
 import unittest
 
 class PathFinder:
@@ -20,12 +26,12 @@ class PathFinder:
             return self.pathfinder(0,0)
 
     def pathfinder(self, x, y):
-        if self.matrix[x][y]==0:
-            return False
-        
         if x>self.m-1 or y>self.n-1 or x<0 or y<0:
             return False
         
+        if self.matrix[x][y]==0:
+            return False        
+                
         if x==self.m-1 and y==self.n-1 and self.matrix[x][y]==1:
             return True
         

@@ -1,3 +1,7 @@
+"""
+To check if a binary tree is a BST, we have to traverse through the tree and check if the root.val is lesser than root.left and
+root.val is greater than root.right value. if this holds good for all the nodes in the tree, we can say its a BST. 
+"""
 class TreeNode:
     def __init__(self,val):
         self.val = val
